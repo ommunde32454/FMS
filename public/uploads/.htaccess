@@ -1,0 +1,3 @@
+# public/.htaccess
+# Allow access to all static assets
+Allow from all

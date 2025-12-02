@@ -1,0 +1,29 @@
+# .htaccess
+
+# 1. Disable Directory Listing (Prevent viewing file lists)
+Options -Indexes
+
+# 2. Enable Rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 3. Security: Block Direct Access to Protected Folders
+    # We allow access to /public, /views, /controllers, /api, and root files.
+    # We BLOCK /src, /config, /templates from direct URL access.
+    RewriteRule ^(src|config|templates)/ - [F,L]
+    
+    # 4. Optional: Force HTTPS (Uncomment if using SSL)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 5. Block Access to Sensitive Files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "(composer\.json|composer\.lock|README\.md)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

@@ -1,0 +1,46 @@
+/* public/css/tailwind.css */
+
+/* * NOTE: Since we are using the Tailwind CDN in header.php, 
+ * the browser handles the base utilities automatically.
+ * * However, if you set up a Node.js build pipeline later, 
+ * this file serves as the entry point.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Custom Component Abstractions (Examples) --- */
+
+@layer components {
+    
+    /* Standard Primary Button */
+    .btn-primary {
+        @apply bg-emerald-600 text-white font-bold py-2 px-4 rounded shadow hover:bg-emerald-700 transition duration-200 ease-in-out;
+    }
+
+    /* Standard Secondary Button */
+    .btn-secondary {
+        @apply bg-gray-600 text-white font-bold py-2 px-4 rounded shadow hover:bg-gray-700 transition duration-200 ease-in-out;
+    }
+
+    /* Danger / Delete Button */
+    .btn-danger {
+        @apply bg-red-100 text-red-700 font-bold py-2 px-4 rounded hover:bg-red-200 transition duration-200 ease-in-out;
+    }
+
+    /* Card Container */
+    .card {
+        @apply bg-white p-6 rounded-lg shadow border border-gray-100;
+    }
+
+    /* Form Input Field */
+    .form-input {
+        @apply w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent;
+    }
+
+    /* Status Badge Base */
+    .badge {
+        @apply px-2 py-1 rounded text-xs font-bold uppercase tracking-wide;
+    }
+}

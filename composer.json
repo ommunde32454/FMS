@@ -1,0 +1,25 @@
+{
+    "name": "yourname/farm-management-system",
+    "description": "A comprehensive Farm Management System (FMS) with 3NF database schema.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "FMS Developer",
+            "email": "dev@example.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-pdo": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
